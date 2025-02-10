@@ -1,0 +1,108 @@
+@import '@/common/colors.less';
+
+.loadingButton {
+  font-size: 1.6rem;
+  width: fit-content;
+  border-radius: 0.6rem;
+  padding: 0.5rem 1rem;
+  min-width: 4rem;
+  font-family: LexendRegular;
+  font-weight: 400;
+  background:@color-white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid @color-border-color;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  user-select: none;
+  color: @color-black;
+}
+.loadingButton:hover {
+  color: @color-primary;
+  border: 1px solid @color-primary;
+}
+.loadingButton:active {
+  scale: 0.95;
+}
+.loadingButton::after{
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0.5;
+  transition: .3s;
+}
+.loadingButton:active::after{
+  box-shadow: 0 0 6rem 3rem @color-primary;
+  opacity: 0;
+  scale: 0;
+}
+
+.loadingIcon {
+  animation: rotateAni 0.5s infinite ease-in-out;
+  margin-right: 1rem;
+}
+@keyframes rotateAni {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+
+.loadingButtonDisable {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+
+.loadingButtonPrimary {
+  background:@color-primary;
+  color: @color-white;
+}
+.loadingButtonPrimary:hover {
+  color: @color-white;
+  background:@color-primary-20;
+  border: 1px solid transparent;
+}
+.loadingButtonPrimary:active::after {
+  box-shadow: 0 0 6rem 3rem @color-white;
+  opacity: 0;
+  scale: 0;
+}
+
+
+.loadingButtonError {
+  background:@color-error;
+  color: @color-white;
+}
+.loadingButtonError:hover {
+  color: @color-white;
+  background:@color-error-20;
+  border: 1px solid transparent;
+}
+.loadingButtonError:active::after {
+  box-shadow: 0 0 6rem 3rem @color-white;
+  opacity: 0;
+  scale: 0;
+}
+
+
+.loadingButtonWarning {
+  background:@color-warning;
+  color: @color-white;
+}
+.loadingButtonWarning:hover {
+  color: @color-white;
+  background:@color-warning-20;
+  border: 1px solid transparent;
+}
+.loadingButtonWarning:active::after {
+  box-shadow: 0 0 6rem 3rem @color-white;
+  opacity: 0;
+  scale: 0;
+}

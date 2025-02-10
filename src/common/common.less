@@ -1,0 +1,86 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+.rowBetween {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.rowCenter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+.rowEnd {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    position: relative;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.columnCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.mainView {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+.mainContent {
+    width: 100%;
+    display: flex;
+    max-width: 119rem;
+    flex-direction: column;
+    @media screen and (max-width: 768px) {
+        width: 90%;
+    }
+    position: relative;
+}
+
+.webView {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.mobileView {
+    display: none;
+    flex-direction: column;
+    position: relative;
+
+    @media (max-width: 768px) {
+        display: flex;
+    }
+}
