@@ -32,3 +32,14 @@ export function buildQueryString(params:Record<string,any>):string{
 }
 
 /**正则表达式，vscode安装插件 any-rule 即可查看 */
+
+/**
+ * 显示钱包地址，中间用*代替
+ * @param address 钱包地址
+ * @returns eg. 0x1234****1234
+ */
+export function formatAddress(address:`0x${string}` | string | undefined){
+  if (!address) return''
+  const add_str = String(address)
+  return add_str.slice(0,6) + '****' + add_str.slice(-4)
+}

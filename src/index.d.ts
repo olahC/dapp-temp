@@ -6,10 +6,12 @@ declare module 'react-reveal/RubberBand'
 declare module 'react-reveal/HeadShake'
 declare module 'react-height'
 declare interface Window {
-  ethereum:any
+  ethereum:any,
+  eventEmitter:any
 }
 declare global {
   var ethereum:any;
+  var eventEmitter:any;
   var okexchain:any;
   var bitkeep:any;
   var gatewallet:any;

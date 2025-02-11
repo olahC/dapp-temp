@@ -1,8 +1,8 @@
 import { erc20Abi } from 'viem'
 import ABI_DOVART from './ABI/DOVART.json'
 import { useChainId } from 'wagmi'
-import Chains from 'viem/chains'
-
+import * as Chains from 'viem/chains'
+  
 export type CONTRACT_CONFIG = {
   address:`0x${string}`,
   abi:any

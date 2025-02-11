@@ -17,9 +17,10 @@ import ErrorBoundaryComponent from '@/components/errorBoundary';
 import { ToastContainer } from 'react-toastify';
 import { WagmiProvider } from 'wagmi';
 import { wagmiConfig } from '@/walletContract/wagmiConfig';
+import EventEmitter from 'events';
 
 AOS.init();
-
+window.eventEmitter = new EventEmitter()
 
 export default function Layout() {
 

@@ -1,0 +1,251 @@
+@import '@/common/colors.less';
+
+.walletConnectView {
+}
+.connectView {
+  width: 100%;
+  padding-bottom: 2.4rem;
+  overflow: hidden;
+  @media (max-width: 768px) {
+    padding-bottom: 1.2rem;
+  }
+}
+.title {
+  font-size: 2rem;
+  font-family: LexendSemiBold;
+  font-weight: 600;
+  color: @color-black;
+  margin-bottom: 3rem;
+  margin-top: 2.4rem;
+  margin-left: 2.4rem;
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+}
+.icon {
+  width: 4rem;
+  height: 4rem;
+  margin-right: 1rem;
+  border-radius: 0.5rem;
+  margin-left: 2.4rem;
+  transition: all 0.5s;
+  @media (max-width: 768px) {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+    margin-left: 2rem;
+  }
+}
+.iconTitle {
+  font-size: 1.6rem;
+  font-family: LexendMedium;
+  font-weight: 500;
+  color: #444;
+  transition: all 0.5s;
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
+}
+.connectItem {
+  padding: 1rem 0;
+  cursor: pointer;
+}
+.connectItem:hover {
+  background: @color-hover;
+}
+.connectItem:hover .iconTitle{
+  color:@color-black;
+  font-size: 2rem;
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+  }
+}
+.connectItem:hover .icon{
+  transform: scale(1.3);
+  margin-right: 2rem;
+  @media (max-width: 768px) {
+    margin-right: 1.6rem;
+  }
+}
+.avatar {
+  width: 2rem;
+  height: 2rem;
+}
+.avatarBig {
+  width: 8rem;
+  height: 8rem;
+  margin-top: 2.4rem;
+  @media (max-width: 768px) {
+    margin-top: 1.8rem;
+  }
+}
+.address {
+  margin: 0 1rem;
+  font-size: 1.6rem;
+  font-family: LexendRegular;
+  font-weight: 400;
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+    margin: 0 0.5rem;
+  }
+}
+.exitIcon {
+  width: 1.8rem;
+  height: 1.8rem;
+  color: @color-white;
+  @media (max-width: 768px) {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+}
+.balance {
+  font-size: 2rem;
+  font-family: LexendRegular;
+  font-weight: 400;
+  margin: 1rem 0;
+  color: @color-connect-balance;
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+    margin: 0.5rem 0;
+  }
+}
+.connectWalletItem {
+  width: 100%;
+  border-radius: 1rem;
+  background: @color-hover;
+  overflow: hidden;
+  padding: 1rem 0;
+  cursor: pointer;
+}
+.connectWalletItem:hover {
+  background: @color-border;
+}
+.connectIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #444;
+  @media (max-width: 768px) {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}
+.connectTitle {
+  font-size: 2rem;
+  font-family: LexendRegular;
+  font-weight: 400;
+  color: #444;
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+  }
+}
+.connectWalletItem:hover .connectTitle {
+  color: @color-black;
+}
+.connectWalletItem:hover .connectIcon {
+  color: @color-black;
+}
+.connectWalletItemDis:hover .connectIcon {
+  color:@color-error
+}
+.connectWalletItemDis:hover .connectTitle {
+  color:@color-error
+}
+.connectItemSwitch {
+  width: 90%;
+  margin-top: 2rem;
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+  }
+}
+.connectNetIcon {
+  margin-left: 2.4rem;
+  margin-right: 1rem;
+  @media (max-width: 768px) {
+    margin-left: 1.8rem;
+    margin-right: 0.5rem;
+  }
+}
+.connectIconRight {
+  margin-right: 2.4rem;
+  transition: all 0.25s;
+  transform: rotate(0deg);
+  @media (max-width: 768px) {
+    margin-right: 1.8rem;
+  }
+}
+.connectIconRightRotate{
+  transform: rotate(-180deg);
+}
+.connectTitleLeft {
+  margin-left: 2.4rem;
+  @media (max-width: 768px) {
+    margin-left: 1.8rem;
+  }
+}
+.connectIconCopied {
+  color: @color-srccess;
+}
+.connectTitleCopied {
+  color: @color-srccess;
+}
+.connectWalletItem:hover .connectIconCopied {
+  color: @color-srccess;
+}
+.connectWalletItem:hover .connectTitleCopied {
+  color: @color-srccess;
+}
+
+.connectWalletItemCopy {
+  margin-left: 5%;
+}
+.connectWalletItemDis {
+  margin-right: 5%;
+}
+.chainsView {
+  width: 100%;
+  height: 0 ;
+  transition: all 0.25s;
+  overflow: hidden;
+  background: @color-hover;
+  border-radius: 1rem;
+  margin-top: 1rem;
+
+}
+.chainItemView {
+  cursor: pointer;;
+}
+.chainItemView:hover {
+  background: @color-border;
+}
+.chainTitle {
+  font-size: 1.6rem;
+}
+.connectedIcon {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.5rem;
+  margin-right: 0.5rem;
+  background: @color-srccess;
+}
+.connectedTitle {
+  font-family: LexendRegular;
+  font-weight: 400;
+  color: @color-srccess;
+  margin-right: 2.4rem;
+  @media (max-width: 768px) {
+    margin-right: 1.8rem;
+  }
+}
+.chainTitleChoose {
+  color: @color-srccess;
+}
+.loadingIcon {
+  margin-right: 2.4rem;
+  @media (max-width: 768px) {
+    margin-right: 1.8rem;
+  }
+}

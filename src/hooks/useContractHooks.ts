@@ -24,13 +24,15 @@ export function useApprove({
   spenderAddress,
   cost,
   onApproveSuccess,
-  onApproveError
+  onApproveError,
+  onFinish
 }:{
   tokenAddress:CONTRACT_CONFIG,
   spenderAddress:CONTRACT_CONFIG,
   cost:number | string,
   onApproveSuccess?:()=>void,
-  onApproveError?:()=>void
+  onApproveError?:()=>void,
+  onFinish?:()=>void
 }){
   const [isApprove, setIsApprove] = useState(false);
 
@@ -74,7 +76,7 @@ export function useApprove({
         refetchAllowance()
       },
       onError:onApproveError,
-      onSettled:()=>{} // 类似finish，不管成功或错误都执行
+      onSettled:onFinish // 类似finish，不管成功或错误都执行
     })
   }
 
@@ -84,30 +86,34 @@ export function useApprove({
 /**获取钱包币的余额 */
 export function useWalletCoinBalances(){
   const {address} = useAccount()
-
+  const chainID = useChainId()
   async function queryFn(){
     if (!address){
       return
     }
     try {
-      const result = await publicClient.multicall({
-        contracts:[
-          { ...USDT_Contract_Config(), functionName:'balanceOf', args:[address] },
-          { ...CUSTOMCOIN_Contract_Config(), functionName:'balanceOf', args:[address] }
-        ]
-      })
+      // const result = await publicClient.multicall({
+      //   contracts:[
+      //     { ...USDT_Contract_Config(), functionName:'balanceOf', args:[address] },
+      //     { ...CUSTOMCOIN_Contract_Config(), functionName:'balanceOf', args:[address] }
+      //   ]
+      // })
+      
       const balance = await publicClient.getBalance({address})
-
-
+      console.log('balance=',balance);
+      
+      return {
+        nativeCurrency:formatUnits(balance,18)
+      }
     } catch {
       throw new Error("useWalletCoinBalances: Network response was not ok");
     }
   }
 
   return useQuery({
-    queryKey: ['useWalletCoinBalances', address],
+    queryKey: ['useWalletCoinBalances', address,chainID],
     queryFn: queryFn,
-    enabled: !!address,
+    enabled: !!address && !!chainID,
     refetchInterval: RefreshConfig.interval_5m,
   });
 }

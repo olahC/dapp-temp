@@ -115,8 +115,7 @@ export default function HomePage() {
     const block = await publicClient.getBlock()
     console.log('block===',block);
   }
-console.log('ethereum=',window.ethereum);
-
+  
 
   return (
     <div>
@@ -142,7 +141,6 @@ console.log('ethereum=',window.ethereum);
 
 
       <Button type='primary' onClick={onPublicGetBalence}>获取余额</Button>
-
 
       <WalletConnectButton/>
     </div>
