@@ -18,11 +18,13 @@ import { BinanceServices } from '@/services';
 import { AxiosError } from 'axios';
 import WalletConnectButton from '@/components/walletConnectButton';
 import { publicClient } from '@/walletContract/viemClients';
+import withAuth from '@/HOC/withAuth';
+import { EVENT_NAME_OPEN_CONNECT_WALLET } from '@/common/define';
 
 
 
 
-export default function HomePage() {
+function HomePage() {
 
   const { data } = useClientLoaderData();
 
@@ -117,6 +119,19 @@ export default function HomePage() {
   }
   
 
+  function onChangeTheme(){
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    if (currentTheme == 'dark'){
+      document.documentElement.removeAttribute('data-theme')
+    }else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  }
+
+  function onOpenWalletConnectModal(){
+    window.eventEmitter.emit(EVENT_NAME_OPEN_CONNECT_WALLET)
+  }
+
   return (
     <div>
       <h2 className={styles.title}>{t('welcome',{name:'张三'})}</h2>
@@ -143,6 +158,10 @@ export default function HomePage() {
       <Button type='primary' onClick={onPublicGetBalence}>获取余额</Button>
 
       <WalletConnectButton/>
+      <Button type='primary' onClick={onChangeTheme}>切换主题</Button>
+      <div className={styles.themeView}>背景色</div>
+      <Button type='primary' onClick={onOpenWalletConnectModal}>打开链接钱包弹框</Button>
+
     </div>
   );
 }
@@ -157,3 +176,4 @@ export async function clientLoader() {
 function MyToastComponent(){
   return <div>MyToastComponent</div>
 }
+export default withAuth(HomePage)

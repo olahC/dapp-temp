@@ -225,3 +225,34 @@ const renderer = ({ days,hours, minutes, seconds, completed }:any) => {
   }
 };
 ```
+
+# 主题切换
+```
+`theme.css`
+
+:root {
+  --bg-color:blue
+}
+
+[data-theme = 'dark'] {
+  --bg-color:purple
+}
+
+function onChangeTheme(){
+  const currentTheme = document.documentElement.getAttribute('data-theme')
+  if (currentTheme == 'dark'){
+    document.documentElement.removeAttribute('data-theme')
+  }else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+}
+
+<div className={styles.themeView}>背景色</div>
+
+.themeView {
+  background: var(--bg-color);
+}
+
+```
+# 打开链接钱包弹框
+`window.eventEmitter.emit(EVENT_NAME_OPEN_CONNECT_WALLET)`

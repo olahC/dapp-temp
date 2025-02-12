@@ -4,7 +4,7 @@ import { publicClient } from "@/walletContract/viemClients";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { erc20Abi, formatUnits } from "viem";
-import { useAccount, useChainId, useReadContract, useWaitForTransactionReceipt, useWriteContract } from "wagmi";
+import { useAccount, useChainId, useReadContract, useWriteContract } from "wagmi";
 
 
 function useTokenAllowance(tokenAddress:CONTRACT_CONFIG, spenderAddress:CONTRACT_CONFIG){
@@ -18,7 +18,7 @@ function useTokenAllowance(tokenAddress:CONTRACT_CONFIG, spenderAddress:CONTRACT
   })
 }
 
-
+/** 授权 */
 export function useApprove({
   tokenAddress,
   spenderAddress,

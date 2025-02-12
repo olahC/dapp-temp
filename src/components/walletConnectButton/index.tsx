@@ -16,12 +16,19 @@ import Skeletons from '../skeletons'
 import copy from 'copy-to-clipboard';
 import { Chain } from 'viem'
 import { Oval } from 'react-loader-spinner'
+import { EVENT_NAME_OPEN_CONNECT_WALLET } from '@/common/define'
 
 export default function WalletConnectButton(){
   const {address} = useAccount()
-
   const [showConnectModal,setShowConnectModal] = useState(false)
   const [showWalletModal,setShowWalletModal] = useState(false)
+
+  useEffect(()=>{
+    window.eventEmitter.addListener(EVENT_NAME_OPEN_CONNECT_WALLET,()=>{
+      setShowConnectModal(true)
+    })
+  },[])
+
   function onOpenModal(){
     if (address){
       setShowWalletModal(true)

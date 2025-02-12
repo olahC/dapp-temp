@@ -1,0 +1,12 @@
+
+/*主题颜色*/
+
+/*默认主题*/
+:root {
+  --bg-color:blue
+}
+
+/*深色主题*/
+[data-theme = 'dark'] {
+  --bg-color:purple
+}

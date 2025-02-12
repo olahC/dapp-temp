@@ -4,6 +4,7 @@ import { persistStore, persistReducer } from 'redux-persist'
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 
 import SettingReducer from './settingSlice'
+import UserReducer from './userSlice'
 
 
 const createNoopStorage = () => {
@@ -30,6 +31,7 @@ const persistConfig = {
 };
 const rootReducer = combineReducers({
   setting: SettingReducer,
+  user:UserReducer
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
@@ -58,7 +60,6 @@ export const store = configureStore({
       },
 })
 export const persistor = persistStore(store)
-
 
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
