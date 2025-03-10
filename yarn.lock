@@ -7857,6 +7857,11 @@ nth-check@^2.0.1:
   dependencies:
     boolbase "^1.0.0"
 
+nzh@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.npmmirror.com/nzh/-/nzh-1.0.14.tgz#dd46c9ee0d2064eca60e10f3382860583df17c02"
+  integrity sha512-wKgaqCSZdrySvB4RWop5g+v6IDv2IErsT6rjq06Bg0yiT9hiHYZO12GMGx/xweGVLcO2lDjX5RqWD0S/Jy9z5Q==
+
 obj-multiplex@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmmirror.com/obj-multiplex/-/obj-multiplex-1.0.0.tgz#2f2ae6bfd4ae11befe742ea9ea5b36636eabffc1"
