@@ -1,4 +1,5 @@
 import styles from './index.less'
+import './index.less'
 import useIntlLanguage from '@/hooks/useIntlLanguage';
 import { LocalsLanaugaeKey, LocalsLanaugaeTitle } from '@/locales';
 import { useAppDispatch } from '@/redux';
@@ -23,6 +24,7 @@ import { EVENT_NAME_OPEN_CONNECT_WALLET } from '@/common/define';
 import { useForm } from 'react-hook-form'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap'
+import classNames from 'classnames';
 
 function HomePage() {
 
@@ -166,9 +168,14 @@ function HomePage() {
   return (
     <div ref={contrainer}>
 
-      <div className="text-9xl font-bold underline text-red-50 cursor-help bg-blue-500">
+      <div className="font-lexend-black text-3xl font-bold underline text-red-500 bg-blue-500">
         Hello world!
       </div>
+      <div className='bg-abcd text-xl'>自定义颜色</div>
+      <div className='text-abcd text-2xl'>自定义颜色</div>
+      <div className='text-efg text-4xl'>自定义颜色</div>
+
+      <div className={classNames(styles.together,'text-3xl font-bold','text-yellow-400')}>tailwindcss和less一起使用</div>
 
       <button className={`box ${styles.box}`} onClick={contextSafe(onBoxClick)}>hello</button>
       <form onClick={handleSubmit(onSubmit)} className='column'>

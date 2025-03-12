@@ -1,35 +1,39 @@
 import { defineConfig } from "umi";
 // https://umijs.org/docs/api/config
 export default defineConfig({
-  title:'MyApp',
+  title: "MyApp",
   plugins: [
-    '@umijs/plugins/dist/locale'
+    "@umijs/plugins/dist/locale", 
+    "@umijs/plugins/dist/tailwindcss"
   ],
   routes: [
     { path: "/", component: "index" },
     { path: "/login", component: "login" },
     { path: "/mine", component: "mine" },
-    { path: "/*", component: '404' }
+    { path: "/*", component: "404" },
   ],
-  npmClient: 'yarn',
+
+  npmClient: "yarn",
   locale: {
-    default: 'zh-CN',
-    baseSeparator: '-',
+    default: "zh-CN",
+    baseSeparator: "-",
     useLocalStorage: true,
     baseNavigator: false,
-    title:false,
-    antd:false
+    title: false,
+    antd: false,
   },
   hash: true,
   history: {
-    type: 'hash',
+    type: "hash",
   },
-  clientLoader:{},
-  headScripts:[
+  clientLoader: {},
+  headScripts: [
     {
-      src:''
-    }
-  ]
+      src: "",
+    },
+  ],
+
+  tailwindcss: {},
 });
 
 /*

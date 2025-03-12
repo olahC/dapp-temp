@@ -280,13 +280,23 @@ export default withAuth(HomePage)
   `https://gsap.com/`
   `https://gsap.com/resources/React`
 
+# tailwindcss
+  `https://umijs.org/blog/develop-blog-using-umi#%E5%AE%89%E8%A3%85-tailwindcss`
+  `https://v3.tailwindcss.com/docs/configuration`
 
 
-安装
-https://tailwindcss.com/docs/installation/using-postcss
 
-本指南将介绍如何使用 Tailwind 与常见的 CSS 预处理器（如 Sass、Less 和 Stylus）进行交互。
-https://v2.tailwindcss.com/docs/using-with-preprocessors#using-post-css-as-your-preprocessor
+
+
+
+
+
+
+
+
+
+
+
 
 
 
