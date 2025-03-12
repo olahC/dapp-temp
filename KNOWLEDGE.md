@@ -12,7 +12,7 @@
   - 设置滚动条样式: `https://scrollbar.app/`
   - 条纹背景: `https://stripesgenerator.com/`
   - 查找设计页面: `https://dribbble.com/`
-
+  - 炫酷组件: `https://uiverse.io/elements`
 
 
 
@@ -36,7 +36,7 @@
 
 # 变量交换，解构赋值
   `[a, b] = [b, a];`
-  
+
 # 事件循环（Event Loop）机制，包括同步任务、微任务（Microtasks）和宏任务（Macrotasks）的执行顺序 
   - 同步代码 优先执行。
   - 微任务（如 Promise.then 和 await 之后的代码）在同步代码执行完毕后立即执行。

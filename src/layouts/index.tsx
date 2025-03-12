@@ -19,7 +19,11 @@ import { ToastContainer } from 'react-toastify';
 import { WagmiProvider } from 'wagmi';
 import { wagmiConfig } from '@/walletContract/wagmiConfig';
 import EventEmitter from 'events';
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
 
+
+gsap.registerPlugin(useGSAP)
 AOS.init();
 window.eventEmitter = new EventEmitter()
 

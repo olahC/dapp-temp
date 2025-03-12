@@ -9,7 +9,7 @@ import { useMutation } from '@tanstack/react-query';
 import { Button } from 'antd';
 import { history, useClientLoaderData } from 'umi';
 import LoadingButton from '@/components/loadingButton';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 import { BiSolidErrorAlt } from "react-icons/bi";
 import { LiaWindowClose } from "react-icons/lia";
@@ -20,9 +20,9 @@ import WalletConnectButton from '@/components/walletConnectButton';
 import { publicClient } from '@/walletContract/viemClients';
 import withAuth from '@/HOC/withAuth';
 import { EVENT_NAME_OPEN_CONNECT_WALLET } from '@/common/define';
-
-
-
+import { useForm } from 'react-hook-form'
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap'
 
 function HomePage() {
 
@@ -132,8 +132,82 @@ function HomePage() {
     window.eventEmitter.emit(EVENT_NAME_OPEN_CONNECT_WALLET)
   }
 
+
+  const { register, handleSubmit, formState:{ errors } } = useForm()
+
+  console.log('errors===',errors);
+  
+  function onSubmit(data:any){
+    console.log('submit=',data);
+    
+  }
+  
+  const contrainer = useRef<any>()
+  
+  // 布局完成后执行动画,执行一次
+  useGSAP(()=>{
+    gsap.to('.box',{rotation:'+=360',duration:3,x:200})
+  },{scope:contrainer})
+  // 方式一：属性改变时执行动画
+  useGSAP(()=>{
+    gsap.to('.box',{rotation:'-=360',duration:3,x:200})
+  },[language])
+  // 方式二：属性改变时执行动画
+  useGSAP(()=>{
+    gsap.to('.box',{rotation:'-=360',duration:3,x:200})
+  },{dependencies:[language],scope:contrainer,revertOnUpdate:false})
+
+  // 点击按钮执行动画
+  const { contextSafe } = useGSAP({scope:contrainer})
+  function onBoxClick(){
+    gsap.to('.box',{duration:3,x:0})
+  }
+
   return (
-    <div>
+    <div ref={contrainer}>
+
+      <div className="text-9xl font-bold underline text-red-50 cursor-help bg-blue-500">
+        Hello world!
+      </div>
+
+      <button className={`box ${styles.box}`} onClick={contextSafe(onBoxClick)}>hello</button>
+      <form onClick={handleSubmit(onSubmit)} className='column'>
+        <input {...register('username',{required:true,minLength:6,maxLength:12,pattern:/^[A-Za-z]+$/i})}/>
+        {errors.username && <div>请输入用户名</div>}
+        <input {...register('password',{required:true})}/>
+        {errors.password && <div>请输入密码</div>}
+
+
+        <select {...register("gender")}>
+          <option value="female">female</option>
+          <option value="male">male</option>
+          <option value="other">other</option>
+        </select>
+
+        <input {...register('count',{required:true,min:2,max:5})}/>
+
+
+
+        <input type='submit'/>
+      </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <h2 className={styles.title}>{t('welcome',{name:'张三'})}</h2>
       <p>
         To get started, edit <code>pages/index.tsx</code> and save to reload.
@@ -161,7 +235,7 @@ function HomePage() {
       <Button type='primary' onClick={onChangeTheme}>切换主题</Button>
       <div className={styles.themeView}>背景色</div>
       <Button type='primary' onClick={onOpenWalletConnectModal}>打开链接钱包弹框</Button>
-
+      
     </div>
   );
 }

@@ -189,7 +189,7 @@ const variants = {
 
 # nzh 阿拉伯数字转中文
   `https://github.com/cnwhy/nzh`
-  
+
 # 浏览图片 react-photo-view
   - 详细介绍 `https://github.com/MinJieLiu/react-photo-view`
 
@@ -257,5 +257,37 @@ function onChangeTheme(){
 }
 
 ```
+
 # 打开链接钱包弹框
 `window.eventEmitter.emit(EVENT_NAME_OPEN_CONNECT_WALLET)`
+
+# 每个页面判断是否登录
+```
+function HomePage() {
+  return <div></div>
+}
+export default withAuth(HomePage)
+```
+
+# 链接钱包库 RainbowKit
+  `https://www.rainbowkit.com/zh-CN/docs/installation`
+
+# 状态管理库 zustand
+  `https://awesomedevin.github.io/zustand-vue/docs/introduce/start/zustand`
+  - 持久化 `https://juejin.cn/post/7452175687089946659`
+
+# js动画库 GSAP
+  `https://gsap.com/`
+  `https://gsap.com/resources/React`
+
+
+
+安装
+https://tailwindcss.com/docs/installation/using-postcss
+
+本指南将介绍如何使用 Tailwind 与常见的 CSS 预处理器（如 Sass、Less 和 Stylus）进行交互。
+https://v2.tailwindcss.com/docs/using-with-preprocessors#using-post-css-as-your-preprocessor
+
+
+
+
