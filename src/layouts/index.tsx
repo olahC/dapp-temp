@@ -1,6 +1,5 @@
 import './index.less'
 import '../extensions'
-import '@/common/common.less'
 import '@/common/theme.css'
 import 'react-photo-view/dist/react-photo-view.css';
 import 'aos/dist/aos.css';

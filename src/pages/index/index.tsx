@@ -7,7 +7,6 @@ import { setVersion } from '@/redux/settingSlice';
 import { useSettingVersion } from '@/redux/settingSlice/hooks';
 import { useTickerPrice } from '@/hooks/useAPIHooks';
 import { useMutation } from '@tanstack/react-query';
-import { Button } from 'antd';
 import { history, useClientLoaderData } from 'umi';
 import LoadingButton from '@/components/loadingButton';
 import { useRef, useState } from 'react';
@@ -25,6 +24,11 @@ import { useForm } from 'react-hook-form'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap'
 import classNames from 'classnames';
+
+
+
+
+
 
 function HomePage() {
 
@@ -169,7 +173,7 @@ function HomePage() {
     <div ref={contrainer}>
 
       <div className="font-lexend-black text-3xl font-bold underline text-red-500 bg-blue-500">
-        Hello world!
+        Hello world!123dddd
       </div>
       <div className='bg-abcd text-xl'>自定义颜色</div>
       <div className='text-abcd text-2xl'>自定义颜色</div>
@@ -226,22 +230,22 @@ function HomePage() {
       <div>{settingVersion}</div>
       <div>{tickerPrice.data?.price}</div>
       <button onClick={onFetch}>{mutation.isPending && '请求中...'}fetch 请求</button>
-      <Button type='primary'>哈哈</Button>
+      <button >哈哈</button>
       <LoadingButton loading={loading} onClick={onButtonClick}>button</LoadingButton>
       <LoadingButton loading={loading} onClick={onButtonClick} type='primary'>ok</LoadingButton>
       <LoadingButton loading={loading} onClick={onButtonClick} type='error'>error</LoadingButton>
       <LoadingButton loading={loading} onClick={onShowToast} type='warning'>显示toast</LoadingButton>
       <LoadingButton loading={loading} onClick={onDisToast} type='warning'>移除toast</LoadingButton>
       <LoadingButton loading={loading} onClick={onJumpMine}>跳转Mine</LoadingButton>
-      <Button type='primary' onClick={onFetchPrice}>获取最新价格</Button>
+      <button  onClick={onFetchPrice}>获取最新价格</button>
 
 
-      <Button type='primary' onClick={onPublicGetBalence}>获取余额</Button>
+      <button  onClick={onPublicGetBalence}>获取余额</button>
 
       <WalletConnectButton/>
-      <Button type='primary' onClick={onChangeTheme}>切换主题</Button>
+      <button onClick={onChangeTheme}>切换主题</button>
       <div className={styles.themeView}>背景色</div>
-      <Button type='primary' onClick={onOpenWalletConnectModal}>打开链接钱包弹框</Button>
+      <button  onClick={onOpenWalletConnectModal}>打开链接钱包弹框</button>
       
     </div>
   );
@@ -257,4 +261,4 @@ export async function clientLoader() {
 function MyToastComponent(){
   return <div>MyToastComponent</div>
 }
-export default withAuth(HomePage)
+export default HomePage

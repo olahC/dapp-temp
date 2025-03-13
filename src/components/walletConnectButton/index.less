@@ -1,7 +1,4 @@
-@import '@/common/colors.less';
 
-.walletConnectView {
-}
 .connectView {
   width: 100%;
   padding-bottom: 2.4rem;
@@ -14,7 +11,7 @@
   font-size: 2rem;
   font-family: LexendSemiBold;
   font-weight: 600;
-  color: @color-black;
+  color: var(--color-black);
   margin-bottom: 3rem;
   margin-top: 2.4rem;
   margin-left: 2.4rem;
@@ -55,10 +52,10 @@
   cursor: pointer;
 }
 .connectItem:hover {
-  background: @color-hover;
+  background: var(--color-hover);
 }
 .connectItem:hover .iconTitle{
-  color:@color-black;
+  color:var(--color-black);
   font-size: 2rem;
   @media (max-width: 768px) {
     font-size: 1.6rem;
@@ -96,7 +93,7 @@
 .exitIcon {
   width: 1.8rem;
   height: 1.8rem;
-  color: @color-white;
+  color: var(--color-white);
   @media (max-width: 768px) {
     width: 1.4rem;
     height: 1.4rem;
@@ -107,7 +104,7 @@
   font-family: LexendRegular;
   font-weight: 400;
   margin: 1rem 0;
-  color: @color-connect-balance;
+  color: var(--color-connect-balance);
   @media (max-width: 768px) {
     font-size: 1.6rem;
     margin: 0.5rem 0;
@@ -116,13 +113,13 @@
 .connectWalletItem {
   width: 100%;
   border-radius: 1rem;
-  background: @color-hover;
+  background: var(--color-hover);
   overflow: hidden;
   padding: 1rem 0;
   cursor: pointer;
 }
 .connectWalletItem:hover {
-  background: @color-border;
+  background: var(--color-border);
 }
 .connectIcon {
   width: 2.4rem;
@@ -143,16 +140,16 @@
   }
 }
 .connectWalletItem:hover .connectTitle {
-  color: @color-black;
+  color: var(--color-black);
 }
 .connectWalletItem:hover .connectIcon {
-  color: @color-black;
+  color: var(--color-black);
 }
 .connectWalletItemDis:hover .connectIcon {
-  color:@color-error
+  color:var(--color-error)
 }
 .connectWalletItemDis:hover .connectTitle {
-  color:@color-error
+  color:var(--color-error)
 }
 .connectItemSwitch {
   width: 90%;
@@ -187,16 +184,16 @@
   }
 }
 .connectIconCopied {
-  color: @color-srccess;
+  color: var(--color-srccess);
 }
 .connectTitleCopied {
-  color: @color-srccess;
+  color: var(--color-srccess);
 }
 .connectWalletItem:hover .connectIconCopied {
-  color: @color-srccess;
+  color: var(--color-srccess);
 }
 .connectWalletItem:hover .connectTitleCopied {
-  color: @color-srccess;
+  color: var(--color-srccess);
 }
 
 .connectWalletItemCopy {
@@ -210,7 +207,7 @@
   height: 0 ;
   transition: all 0.25s;
   overflow: hidden;
-  background: @color-hover;
+  background: var(--color-hover);
   border-radius: 1rem;
   margin-top: 1rem;
 
@@ -219,7 +216,7 @@
   cursor: pointer;;
 }
 .chainItemView:hover {
-  background: @color-border;
+  background: var(--color-border);
 }
 .chainTitle {
   font-size: 1.6rem;
@@ -229,19 +226,19 @@
   height: 1rem;
   border-radius: 0.5rem;
   margin-right: 0.5rem;
-  background: @color-srccess;
+  background: var(--color-srcces);
 }
 .connectedTitle {
   font-family: LexendRegular;
   font-weight: 400;
-  color: @color-srccess;
+  color: var(--color-srccess);
   margin-right: 2.4rem;
   @media (max-width: 768px) {
     margin-right: 1.8rem;
   }
 }
 .chainTitleChoose {
-  color: @color-srccess;
+  color: var(--color-srccess);
 }
 .loadingIcon {
   margin-right: 2.4rem;

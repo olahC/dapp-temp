@@ -1,6 +1,5 @@
 import { useAppDispatch } from "@/redux";
 import { setUserUID } from "@/redux/userSlice";
-import { Button } from "antd";
 import { useState } from "react";
 import { Navigate } from "umi";
 
@@ -22,6 +21,6 @@ export default function Login(){
   }
 
   return isLogin ? <Navigate to="/" /> : <div>
-    <Button onClick={onLogin}>{isLoading ? '登录中...' : '登录'}</Button>
+    <button onClick={onLogin}>{isLoading ? '登录中...' : '登录'}</button>
   </div>
 }

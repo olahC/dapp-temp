@@ -279,12 +279,37 @@ export default withAuth(HomePage)
 # js动画库 GSAP
   `https://gsap.com/`
   `https://gsap.com/resources/React`
+  ```
+    const contrainer = useRef<any>()
+    // 布局完成后执行动画,执行一次
+    useGSAP(()=>{
+      gsap.to('.box',{rotation:'+=360',duration:3,x:200})
+    },{scope:contrainer})
+    // 方式一：属性改变时执行动画
+    useGSAP(()=>{
+      gsap.to('.box',{rotation:'-=360',duration:3,x:200})
+    },[language])
+    // 方式二：属性改变时执行动画
+    useGSAP(()=>{
+      gsap.to('.box',{rotation:'-=360',duration:3,x:200})
+    },{dependencies:[language],scope:contrainer,revertOnUpdate:false})
+    // 点击按钮执行动画
+    const { contextSafe } = useGSAP({scope:contrainer})
+    function onBoxClick(){
+      gsap.to('.box',{duration:3,x:0})
+    }
+
+    return (
+      <div ref={contrainer}>
+    )
+  ```
 
 # tailwindcss
   `https://umijs.org/blog/develop-blog-using-umi#%E5%AE%89%E8%A3%85-tailwindcss`
   `https://v3.tailwindcss.com/docs/configuration`
 
-
+# shadcn/ui
+  `https://www.shadcn.net/docs/installation/manual`
 
 
 

@@ -5,6 +5,7 @@ import {Watch} from 'react-loader-spinner'
 
 /**网址打开时显示 loading page */
 export default function Loading(){
+  return <></>
 
   const [windowSize,setWindowSize] = useState({
     width:window.innerWidth,

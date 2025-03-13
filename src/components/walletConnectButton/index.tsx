@@ -1,6 +1,4 @@
-import { Modal } from 'antd'
 import styles from './index.less'
-import './custom.antd.less'
 import { useAccount, useChainId, useChains, useConnect, useDisconnect, useSwitchChain } from 'wagmi'
 import classNames from 'classnames'
 import LoadingButton from '../loadingButton'
@@ -43,7 +41,7 @@ export default function WalletConnectButton(){
       <div className={styles.address}>{formatAddress(address) || '链接钱包'}</div>
       {address && <TbArrowLeftFromArc className={styles.exitIcon}/>}
     </LoadingButton>
-    <Modal
+    {/* <Modal
       open={showConnectModal}
       destroyOnClose
       onCancel={()=>setShowConnectModal(false)}
@@ -60,7 +58,7 @@ export default function WalletConnectButton(){
       maskClosable={false}
       footer={[]}>
         <WalletInfoComponent avatarSVG={avatarSVG} onDisconnect={()=>setShowWalletModal(false)}/>
-    </Modal>
+    </Modal> */}
   </div>
 }
 
