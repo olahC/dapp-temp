@@ -5,6 +5,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 import 'aos/dist/aos.css';
 import 'react-tooltip/dist/react-tooltip.css'
 
+
 import { Outlet } from 'umi';
 import AOS from 'aos';
 import { ErrorInfo } from 'react';

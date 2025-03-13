@@ -39,6 +39,10 @@
 # components/errorBoundary
  - UI 错误显示页面
 
+# 多语言
+  `useIntlLanguage`
+  `setLocaleLanguage(LocalsLanaugaeKey.US)`
+
 # components/loadingButton
  - 自定义loading按钮，目前支持 type = 'primary' | 'default' | 'error' | 'warning' 4种类型, 其他颜色的需重新定义type，暂不支持传入属性参数
 
@@ -111,6 +115,9 @@ import SmileUrl, { ReactComponent as SvgSmile } from '@/assets/svg/Aptos.svg'
 
 # icon大全
   - 详细介绍 `https://react-icons.github.io/react-icons/`
+
+# @mui/icons-material 图标
+  `https://mui.com/material-ui/material-icons/`
 
 # 动画 motion
   - 详细介绍 `https://motion.dev/docs/react-quick-start`
@@ -311,18 +318,7 @@ export default withAuth(HomePage)
 # shadcn/ui
   `https://www.shadcn.net/docs/installation/manual`
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# MUI组件库
+  `https://mui.com/material-ui/getting-started/installation/`
+  - sx `https://mui.com/system/getting-started/the-sx-prop/`
 
