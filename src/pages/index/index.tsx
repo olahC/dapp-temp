@@ -7,11 +7,12 @@ import { CustomButton, customStyles, rotate360 } from './styles';
 import { AccessTimeFilled, AirplanemodeActive, AirlineSeatLegroomReduced } from '@mui/icons-material'
 import Skeletons from '@/components/skeletons';
 import { Skeleton } from '@mui/material';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 function HomePage() {
   return (
     <div>
-
+      <ConnectButton />
       <Button style={{
         background:'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)'
       }} variant="contained">Hello world</Button>

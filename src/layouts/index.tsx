@@ -4,6 +4,7 @@ import '@/common/theme.css'
 import 'react-photo-view/dist/react-photo-view.css';
 import 'aos/dist/aos.css';
 import 'react-tooltip/dist/react-tooltip.css'
+import '@rainbow-me/rainbowkit/styles.css';
 
 
 import { Outlet } from 'umi';
@@ -21,7 +22,7 @@ import { wagmiConfig } from '@/walletContract/wagmiConfig';
 import EventEmitter from 'events';
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
-
+import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
 
 gsap.registerPlugin(useGSAP)
 AOS.init();
@@ -41,8 +42,10 @@ export default function Layout() {
         <PersistGate loading={null} persistor={persistor}>
           <WagmiProvider config={wagmiConfig}>
             <ReactQueryProvider>
-              <Outlet />
-              <ToastContainer/>
+              <RainbowKitProvider>
+                <Outlet />
+                <ToastContainer/>
+              </RainbowKitProvider>
             </ReactQueryProvider>
           </WagmiProvider>
         </PersistGate>
