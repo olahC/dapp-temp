@@ -8,11 +8,13 @@ import { AccessTimeFilled, AirplanemodeActive, AirlineSeatLegroomReduced } from 
 import Skeletons from '@/components/skeletons';
 import { Skeleton } from '@mui/material';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import Echarts from '@/components/echarts';
 
 function HomePage() {
   return (
     <div>
       <ConnectButton />
+      <Echarts/>
       <Button style={{
         background:'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)'
       }} variant="contained">Hello world</Button>
