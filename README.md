@@ -318,6 +318,13 @@ export default withAuth(HomePage)
   - 在 less  css  sass 使用 @apply 会提示警告 在vscode中，搜索 css 找到语言配置 CSS › Lint: Unknown At Rules  设置为 ignore
     `https://v3.tailwindcss.com/docs/using-with-preprocessors`
     
+
+  - 快速查看:`https://v3.tailwindcss.com/docs/hover-focus-and-other-states#quick-reference`
+  - 屏幕@media  `https://v3.tailwindcss.com/docs/responsive-design`
+                `https://v3.tailwindcss.com/docs/functions-and-directives#screen`
+
+
+
 # shadcn/ui
   `https://www.shadcn.net/docs/installation/manual`
 
