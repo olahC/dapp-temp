@@ -314,7 +314,10 @@ export default withAuth(HomePage)
 # tailwindcss
   `https://umijs.org/blog/develop-blog-using-umi#%E5%AE%89%E8%A3%85-tailwindcss`
   `https://v3.tailwindcss.com/docs/configuration`
-
+  - `<div className={classNames(styles.together,'text-3xl font-bold','text-yellow-400')}>tailwindcss和less一起使用</div>` 
+  - 在 less  css  sass 使用 @apply 会提示警告 在vscode中，搜索 css 找到语言配置 CSS › Lint: Unknown At Rules  设置为 ignore
+    `https://v3.tailwindcss.com/docs/using-with-preprocessors`
+    
 # shadcn/ui
   `https://www.shadcn.net/docs/installation/manual`
 

@@ -35,6 +35,7 @@
     "language-translate": "^2.2.5",
     "motion": "^12.4.1",
     "nzh": "^1.0.14",
+    "postcss-import": "^16.1.0",
     "react-countdown": "^2.3.6",
     "react-countup": "^6.5.3",
     "react-error-boundary": "^5.0.0",
